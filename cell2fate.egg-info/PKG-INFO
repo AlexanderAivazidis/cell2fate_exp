@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: cell2fate
+Version: 0.1a0
+Summary: Models for understanding differentiation and cell-fate decisions based on single-cell data.
+Home-page: https://github.com/AlexanderAivazidis/cell2fate
+Author: Alexander Aivazidis, Vitalii Kleshchevnikov
+Author-email: alexander.aivazidis@sanger.ac.uk
+License: Apache License, Version 2.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyro-ppl>=1.8.0
+Requires-Dist: scvi-tools==0.16.1
+Requires-Dist: anndata==0.8.0
+Requires-Dist: importlib_metadata==3.10.0
+Requires-Dist: matplotlib==3.5.2
+Requires-Dist: numpy==1.23.5
+Requires-Dist: pandas==1.4.2
+Requires-Dist: rich==12.3.0
+Requires-Dist: scanpy==1.9.1
+Requires-Dist: scipy==1.8.0
+Requires-Dist: scvelo==0.2.4
+Requires-Dist: setuptools
+Requires-Dist: torch==1.11.0
+Requires-Dist: ml_dtypes==0.2.0
+Requires-Dist: jax==0.4.10
+Requires-Dist: jaxlib==0.4.10
+Requires-Dist: leidenalg==0.10.1
+Requires-Dist: gseapy
+
+### cell2fate
+
+## Usage and Tutorials
+
+The standard recommended workflow for using cell2fate can be found in this this tutorial [here](https://github.com/BayraktarLab/cell2fate/blob/main/notebooks/cell2fate_PancreasWithCC.ipynb).
+For further notebooks and examples including more datasets and integration with cell2location we have more notebooks [here](https://github.com/BayraktarLab/cell2fate/blob/main/notebooks/)
+
+## Installation
+
+We suggest using a separate conda environment for installing cell2fate.
+
+Create a conda environment and install the `cell2fate` package.
+
+```bash
+conda create -y -n cell2fate_env python=3.9
+
+conda activate cell2fate_env
+pip install git+https://github.com/BayraktarLab/cell2fate
+```
+
+To use this environment in a jupyter notebook, add a jupyter kernel for this environment:
+
+```bash
+conda activate cell2fate_env
+pip install ipykernel
+python -m ipykernel install --user --name=cell2fate_env --display-name='Environment (cell2fate_env)'
+```
+
+If you do not have conda please install Miniconda first:
+
+```bash
+cd /path/to/software
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+# use prefix /path/to/software/miniconda3
+```
+
+Before installing cell2fate and it's dependencies, it could be necessary to make sure that you are creating a fully isolated conda environment by telling python to NOT use user site for installing packages, ideally by adding this line to your `~/.bashrc` file , but this would also work during a terminal session:
+
+```bash
+export PYTHONNOUSERSITE="someletters"
+```
